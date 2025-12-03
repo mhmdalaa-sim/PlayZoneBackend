@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Backend/PlayZone/Program.cs",
+      "use": "@vercel/dotnet"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Backend/PlayZone/Program.cs"
+    }
+  ],
+  "env": {
+    "ASPNETCORE_ENVIRONMENT": "Production",
+    "DB_HOST": "@db_host",
+    "DB_PORT": "5432",
+    "DB_NAME": "@db_name",
+    "DB_USER": "@db_user",
+    "DB_PASSWORD": "@db_password",
+    "JWT_SECRET": "@jwt_secret",
+    "ADMIN_PASSWORD": "@admin_password",
+    "WHATSAPP_NUMBER": "@whatsapp_number"
+  }
+}
